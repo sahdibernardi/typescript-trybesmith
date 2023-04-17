@@ -6,4 +6,12 @@ const newProduct = async (req: Request, res: Response) => {
   res.status(201).json(service);
 };
 
-export default { newProduct };
+const listProducts = async (_req: Request, res: Response) => {
+  const service = await productsService.listProducts();
+  res.status(200).json(service);
+};
+
+export default {
+  newProduct,
+  listProducts,
+};

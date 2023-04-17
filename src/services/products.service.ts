@@ -6,9 +6,21 @@ interface Product {
   amount: string;
 }
 
+interface Order extends Product {
+  orderId: number;
+}
+
 const newProduct = async (product: Product) => {
   const model = await productsModel.newProduct(product);
   return model;
 };
 
-export default { newProduct };
+const listProducts = async (): Promise<Order[]> => {
+  const model = await productsModel.listProducts();
+  return model;
+};
+
+export default {
+  newProduct,
+  listProducts,
+};
