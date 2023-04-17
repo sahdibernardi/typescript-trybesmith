@@ -1,4 +1,4 @@
-import { ResultSetHeader } from 'mysql2';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
 import connection from './connection';
 
 interface User {
@@ -9,6 +9,14 @@ interface User {
   password: string;
 }
 
+const getUserId = async (user: string) => {
+  const id = await connection.execute<RowDataPacket[]>(
+    'SELECT id FROM Trybesmith.users WHERE username = ?',
+    [user],
+  );
+  return id;
+};
+
 const newUser = async (user: User) => {
   const { username, vocation, level, password } = user;
   await connection.execute<ResultSetHeader>(
@@ -17,4 +25,7 @@ const newUser = async (user: User) => {
   );
 };
 
-export default { newUser };
+export default {
+  newUser,
+  getUserId,
+};
