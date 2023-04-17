@@ -7,6 +7,10 @@ interface User {
   level: number;
   password: string;
 }
+interface Login {
+  username: string;
+  password: string;
+}
 
 const JWT_SECRET = process.env.JWT_SECRET || 'abobrinha';
 
@@ -15,6 +19,6 @@ const JWT_CONFIG: SignOptions = {
   expiresIn: '15m',
 };
 
-const generateJWT = (payload: User) => jwt.sign(payload, JWT_SECRET, JWT_CONFIG);
+const generateJWT = (payload: User | Login) => jwt.sign(payload, JWT_SECRET, JWT_CONFIG);
 
 export default generateJWT;

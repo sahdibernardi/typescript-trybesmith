@@ -2,7 +2,7 @@ import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 
 interface User {
-  id?: number;
+  id: number;
   username: string;
   vocation: string;
   level: number;
