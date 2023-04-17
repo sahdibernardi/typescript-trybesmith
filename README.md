@@ -13,23 +13,15 @@ The following technologies and stacks were used in the project:
 
 ## Installation
 Clone the repository using the following command:
-bash
-Copy code
 git clone https://github.com/sahdibernardi/typescript-trybesmith.git
 
 Navigate to the project directory using the following command:
-bash
-Copy code
 cd typescript-trybesmith
 
 Install the dependencies using the following command:
-bash
-Copy code
 npm install
 
 Start the project using the following command:
-bash
-Copy code
 npm start
 
 ## Usage
@@ -38,8 +30,6 @@ The project contains multiple examples and implementations of TypeScript concept
 The main implementation of TypeScript is in the index.ts file in the /src directory. It contains a simple shopping cart implementation using TypeScript. You can run this implementation using the following command:
 
 bash
-Copy code
-npm run cart
 This will run the index.ts file and output the results of the shopping cart implementation.
 
 ## Contributing
