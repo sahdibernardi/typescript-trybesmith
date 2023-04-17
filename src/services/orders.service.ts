@@ -11,6 +11,11 @@ const listOrders = async (): Promise<Order[]> => {
   return model;
 };
 
+const newOrder = async (userId: number) => {
+  const oModel = await ordersModel.newOrder(userId);
+};
+
 export default {
   listOrders,
+  newOrder,
 };

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const nameValidation = (req: Request, res: Response, next: NextFunction) => {
+const nameV = (req: Request, res: Response, next: NextFunction) => {
   const { name } = req.body;
   if (!name) {
     return res
@@ -20,7 +20,7 @@ const nameValidation = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-const amountValidation = (req: Request, res: Response, next: NextFunction) => {
+const amountV = (req: Request, res: Response, next: NextFunction) => {
   const { amount } = req.body;
   if (!amount) {
     return res
@@ -41,6 +41,6 @@ const amountValidation = (req: Request, res: Response, next: NextFunction) => {
 };
 
 export default {
-  nameValidation,
-  amountValidation,
+  nameV,
+  amountV,
 };
