@@ -28,7 +28,12 @@ const listProducts = async (): Promise<Order[]> => {
   return list;
 };
 
+const newOrderId = async (order:number, e:number) => {
+  await connection.execute('UPDATE Trybesmith.products SET order_id= ?  WHERE id = ?', [order, e]);
+};
+
 export default { 
   newProduct,
   listProducts,
+  newOrderId,
 };
